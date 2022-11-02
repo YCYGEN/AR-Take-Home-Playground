@@ -31,9 +31,10 @@ You are allowed to use any available open source templates, or solutions, as lon
 
 Download the template project and inspect the given `Playground` scene. You will find a folder called `Models/Actor` containing 2 .fbx files, containing a humanoid avatar and each file has an animation associated to it. 
 
-Solution should have Task A fully finished, while Task B is considered advanced. If you don't have time to develop Task B, please provide an explanation of how would you approach solving the task and keep in mind that this will be one of the conversation topics in the review, cause it's a really fun conversation starter for many other related topics.
+Solution should have Task A and B finished, while Task C is considered optional. If you don't have time to develop Task B, please provide an explanation of how would you approach solving the task and keep in mind that this will be one of the conversation topics in the review, cause it's a really fun conversation starter for many other related topics.
 
 ### Task A
+Basic Level Interactions.
 
 For this task, it will be enough to use any of the `Actor_Walking` or `Actor_HangingIdle` models. You should prepare an AR scene which will allow the user to: 
 - Run the Playground app on an iPhone device supporting ARFoundation 5.0.2 (or Android should be fine, even though the project is not prepared for this so it will require more work)
@@ -50,19 +51,23 @@ Feel free to add any kind of other game objects and scripts. For example: indica
 
 
 ### Task B
-
+Advanced Level Interactions.
 
 For this task you will need to use both `Actor_Walking` or `Actor_HangingIdle` models provided in this template. 
 Requirements for this task are:
 
-**Part 1**
 - Run the Playground app on an iPhone device supporting ARFoundation 5.0.2 (or Android should be fine, even though the project is not prepared for this so it will require more work), and after that:
 - User should be able to place the `Actor` object somewhere in the scene (trivial if you already solved Task A)
 - After placing the object, AR app is supposed to detect if a real person appears in the scene. Hint: use body tracking or person segmentation options included in the ARFoundation. For Android: if you don't have a specific way to detect a person, use an arbitrary game object, or any other real world detected object. 
-- When a person is detected, app should trigger the walking animation and our `Actor` should walk towards the detected person / object. 
+- When a person is detected, on user signal - let's say double tap gesture, app should trigger the walking animation and our `Actor` should walk towards the detected person / object. 
 - When `Actor` reaches the proximity of a person/object, this should trigger our `Actor` to attach to the person/object and stay in `Actor_HangingIdle` state. 
 
-**Part 2**
+If detecting an object or a person is too much, perhaps try to attach the `Actor` to a point where user double taps.
+
+
+### Task C
+Optional - Real world Interactions!
+
 - Once the `Actor` is attached to some detected person/object, let's have some fun with it! Let's add a behaviour which will be triggered if the person/object is moved at a certain velocity or shaking.
 - This should make our `Actor` detach from the person/object and fall on the horizontal surface below it. Hint: Perhaps it can behave like a ragdoll, and collide with the surface :) 
 
